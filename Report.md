@@ -60,15 +60,15 @@ Built with Java 11+, the application demonstrates API integration, JSON parsing,
                      
 ## Help
 
-### Common issues and solutions:
+# Common issues and solutions:
 
          Ensure your NEWS_API_KEY environment variable is set correctly      
-### No News Articles Displayed
+# No News Articles Displayed
 
          Check your internet connection and API key validity
          The free NewsAPI tier has limited requests per day
 
-### Broweser Doesn't Open
+# Broweser Doesn't Open
 
          The application attempts to open your default browser
          Some Linux systems may require additional configuration
@@ -97,7 +97,8 @@ To see available commands:
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the LICENSE file for details.
+
 
 ## Acknowledgments
 
