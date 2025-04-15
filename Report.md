@@ -1,7 +1,6 @@
 # Project Title
 
-Simple overview of use/purpose.
-
+A Java-based news aggregator that fetches and displays the latest headlines from NewsAPI.
 ## Description
 
 An in-depth paragraph about your project and overview of use.
