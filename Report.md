@@ -20,11 +20,29 @@ Built with Java 11+, the application demonstrates API integration, JSON parsing,
 
 ### Dependencies
 
+* java 17 or higher
+
+* Gradle 7.0+
+
+* NewsAPI account (free tier available)
+
+* Gson library (auto-installed via Gradle)
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+1. Clone the repository:
+
+         git clone https://github.com/yourusername/news-aggregator.git 
+         cd news-aggregator
+   
+2. Set your NewsAPI key as environment variable:
+   
+
+         # Linux/macOS
+         export NEWS_API_KEY="your_api_key_here"
+                  
+         # Windows
+         set NEWS_API_KEY="your_api_key_here"
 
 ### Executing program
 
