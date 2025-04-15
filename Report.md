@@ -46,33 +46,54 @@ Built with Java 11+, the application demonstrates API integration, JSON parsing,
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+1. Build the project:
 
+         gradle build 
+
+2. Run the applicaion:
+
+         gradle run
+
+3. Alternatively, run directly:
+
+         java -jar build/libs/news-aggregator.jar
+                     
 ## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+### Common issues and solutions:
 
+         Ensure your NEWS_API_KEY environment variable is set correctly      
+### No News Articles Displayed
+
+         Check your internet connection and API key validity
+         The free NewsAPI tier has limited requests per day
+
+### Broweser Doesn't Open
+
+         The application attempts to open your default browser
+         Some Linux systems may require additional configuration
+
+To see available commands:
+
+         java -jar build/libs/news-aggregator.jar --help
+         
 ## Authors
 
-Contributors names and contact info
+* [Ahmad Lord] - [ahmadrezajafary1384@gmail.com]
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+* github.com/MRL0R3
+  
+* github.com/TheDanielTP
+
 
 ## Version History
 
-* 0.2
-    * Various bug fixes and optimizations
+* 1.0.1
+    * Improved error handling
+    * Added browser integration   
     * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+* 1.0.0
+    * Initial Release with basic news fetching and display
 
 ## License
 
