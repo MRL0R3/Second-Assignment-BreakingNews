@@ -5,20 +5,26 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        String apiKey = System.getenv("NEWS_API_KEY");
         System.out.println("Welcome to News Aggregator!");
         System.out.print("Enter your NewsAPI key: ");
-        String apiKey = scanner.nextLine();
+        if (apiKey == null || apiKey.isEmpty()) {
+            System.err.println("❌ ERROR: API key not found in environment variables!");
+            System.exit(1);
+        }
 
+
+        List<News> newsList = null;
+        String url;
         Infrastructure newsFetcher = new Infrastructure(apiKey);
 
         try {
             System.out.println("\nFetching latest news...");
             String jsonData = newsFetcher.fetchNewsData();
-            List<News> newsList = newsFetcher.parseNewsData(jsonData);
-
+            newsList = newsFetcher.getNewsList();
             boolean running = true;
             while (running) {
                 displayMenu(newsList);
