@@ -3,7 +3,6 @@ package AP;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
-import java.util.InputMismatchException;
 
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
@@ -19,14 +18,18 @@ public class Main {
 
         try {
             Infrastructure newsFetcher = new Infrastructure(apiKey);
-            List<News> newsList = newsFetcher.fetchNews();
+            boolean shouldRefresh = true;
 
-            if (newsList.isEmpty()) {
-                System.out.println("\n⚠️ No news articles found. Please try again later.");
-                return;
+            while (shouldRefresh) {
+                List<News> newsList = newsFetcher.fetchNews();
+
+                if (newsList.isEmpty()) {
+                    System.out.println("\n⚠️ No news articles found. Please try again later.");
+                    return;
+                }
+
+                shouldRefresh = runNewsMenu(newsList);
             }
-
-            runNewsMenu(newsList);
 
         } catch (IOException e) {
             System.err.println("\n⚠️ Network Error: " + e.getMessage());
@@ -37,6 +40,7 @@ public class Main {
             System.out.println("\nThank you for using News Aggregator! Goodbye 👋");
         }
     }
+
 
     private static void displayWelcomeBanner() {
         System.out.println("\n====================================");
@@ -61,8 +65,10 @@ public class Main {
         return inputKey;
     }
 
-    private static void runNewsMenu(List<News> newsList) {
+
+    private static boolean runNewsMenu(List<News> newsList) {
         boolean running = true;
+        boolean shouldRefresh = false;
 
         while (running) {
             clearScreen();
@@ -79,7 +85,9 @@ public class Main {
 
                 if (input.equalsIgnoreCase("r")) {
                     System.out.println("\n🔃 Refreshing news...");
-                    return; // Exit to fetch fresh news
+                    running = false;
+                    shouldRefresh = true;
+                    continue;
                 }
 
                 int choice = Integer.parseInt(input);
@@ -96,6 +104,8 @@ public class Main {
                 waitForUserInput();
             }
         }
+
+        return shouldRefresh;
     }
 
     private static void displayNewsMenu(List<News> newsList) {
