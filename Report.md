@@ -11,15 +11,15 @@ An in-depth paragraph about your project and overview of use.
 
 This application allows users to:
 
-    Fetch real-time news articles from NewsAPI
+* Fetch real-time news articles from NewsAPI
 
-    Browse headlines in a user-friendly console interface
+* Browse headlines in a user-friendly console interface
 
-    View detailed news information
+* View detailed news information
 
-    Refresh news content on demand
+* Refresh news content on demand
 
-    Open articles in a web browser
+* Open articles in a web browser
 
 Built with Java 11+, the application demonstrates API integration, JSON parsing, and clean console UI design.
 ### Installing
