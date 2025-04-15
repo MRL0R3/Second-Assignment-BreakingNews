@@ -3,12 +3,6 @@
 A Java-based news aggregator that fetches and displays the latest headlines from NewsAPI.
 ## Description
 
-An in-depth paragraph about your project and overview of use.
-
-## Getting Started
-
-### Dependencies
-
 This application allows users to:
 
 * Fetch real-time news articles from NewsAPI
@@ -22,6 +16,11 @@ This application allows users to:
 * Open articles in a web browser
 
 Built with Java 11+, the application demonstrates API integration, JSON parsing, and clean console UI design.
+## Getting Started
+
+### Dependencies
+
+
 ### Installing
 
 * How/where to download your program
